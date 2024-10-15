@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { jsPDF } from 'jspdf';
+import Header from './Header';
+import Footer from './Footer';
 
 function FindParking() {
   const [location, setLocation] = useState('');
@@ -84,9 +86,10 @@ function FindParking() {
     }
   };
 
-  return (
+  return (<>
+    <Header/>
     <div className="find-parking container">
-      <h2>Find Parking in Mumbai</h2>
+      <h2 className='text-2xl text-blue-400 -ml-10 pb-4 font-bold'>Find Parking in Mumbai</h2>
       <form onSubmit={handleSearch} className="search-form">
         <div className="form-group">
           <label htmlFor="location">Location:</label>
@@ -163,6 +166,8 @@ function FindParking() {
         </div>
       )}
     </div>
+    <Footer/>
+    </>
   );
 }
 

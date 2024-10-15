@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import Header from './Header';
+import Footer from './Footer';
 
 function ListParking() {
   const [parkingDetails, setParkingDetails] = useState({
@@ -49,8 +51,10 @@ function ListParking() {
   };
 
   return (
+    <>
+    <Header/>
     <div className="list-parking container">
-      <h2>List Your Parking Space</h2>
+      <h2 className='text-2xl text-blue-400 -ml-10 pb-4 font-bold'>List Your Parking Space</h2>
       <form onSubmit={handleSubmit} className="listing-form">
         <div className="form-group">
           <label htmlFor="mainAddress">Main Address:</label>
@@ -183,6 +187,8 @@ function ListParking() {
         <button type="submit" className="btn">List Parking Space</button>
       </form>
     </div>
+    <Footer/>
+    </>
   );
 }
 

@@ -1,14 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Header from './Header';
+import Footer from './Footer';
 
 function Home() {
   return (
+    
     <div className="home">
+      <Header/>
       <section className="hero">
         <div className="hero-content">
           <h1>Welcome to ParkEase</h1>
           <p>Find and list parking spaces with ease in Mumbai!</p>
-          <div className="cta-buttons">
+          <div className="cta-buttons flex space-x-4 justify-center">
             <Link to="/find-parking" className="btn">Find Parking</Link>
             <Link to="/list-parking" className="btn">List Your Space</Link>
           </div>
@@ -40,6 +44,7 @@ function Home() {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   );
 }

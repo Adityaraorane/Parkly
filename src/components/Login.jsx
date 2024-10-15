@@ -49,9 +49,9 @@ function Login() {
   };
 
   return (
-    <div className="login">
-      <h2>Login to Your Account</h2>
-      <form onSubmit={handleSubmit} className="login-form">
+    <div className="login w-3/4 m-auto">
+      <h2 className='font-bold text-blue-400 text-2xl text-center m-4'>Login to Your Account</h2>
+      <form onSubmit={handleSubmit} className="login-form m-5 p-5">
         <div className="form-group">
           <label htmlFor="email">Email:</label>
           <input
@@ -73,12 +73,14 @@ function Login() {
           />
         </div>
         {error && <div className="error-message">{error}</div>}
-        <button type="submit" className="btn">Login</button>
+        <div className='flex justify-center'>
+        <button type="submit" className="btn ">Login</button>
+        </div>
       </form>
 
 
-      <p>
-        Haven't registered yet? <Link to="/register">Register here</Link>
+      <p className='text-center'>
+        Haven't registered yet? <Link className='text-blue-500 hover:underline' to="/register">Register here</Link>
       </p>
     </div>
   );

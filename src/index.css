@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary-color: #3498db;
   --secondary-color: #2ecc71;
@@ -166,7 +170,7 @@ body {
   color: #fff;
   text-align: center;
   padding: 2rem 0;
-  margin-top: 4rem;
+  margin-top: 3rem;
 }
 
 /* FindParking and ListParking styles */

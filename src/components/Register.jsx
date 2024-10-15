@@ -109,8 +109,8 @@ function Register() {
   };
 
   return (
-    <div className="register">
-      <h2>Create an Account</h2>
+    <div className="register w-3/4 m-auto">
+      <h2 className='font-bold text-blue-400 text-2xl text-center m-4'>Create an Account</h2>
       <form onSubmit={handleSubmit} className="register-form">
         <div className="form-group">
           <label htmlFor="firstName">First Name:</label>
@@ -124,10 +124,10 @@ function Register() {
           />
         </div>
         <div className="form-group">
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="middlename">Middle Name:</label>
           <input
             type="text"
-            id="lastName"
+            id="middlename"
             name="lastName"
             value={formData.lastName}
             onChange={handleChange}
@@ -161,6 +161,8 @@ function Register() {
           <input
             type="tel"
             id="mobile"
+            minLength="10"
+            maxLength="10"
             name="mobile"
             value={formData.mobile}
             onChange={handleChange}

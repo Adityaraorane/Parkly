@@ -3,6 +3,8 @@ import React from 'react';
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
+import Header from './Header';
+import Footer from './Footer';
 
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerIcon2x from 'leaflet/dist/images/marker-icon-2x.png';
@@ -51,8 +53,10 @@ const MapView = () => {
     window.open("http://localhost:5173/find-parking", "_blank"); 
   };
 
-  return (
-    <MapContainer center={[19.076, 72.8777]} zoom={12} style={{ height: "600px", width: "100%" }}>
+  return (<><Header/>
+  <div className='mx-5'>
+    <MapContainer center={[19.076, 72.8777]} zoom={12} style={{ height: "600px", width: "100%" }} className='-mb-10'>
+      
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
@@ -80,6 +84,9 @@ const MapView = () => {
         </Marker>
       ))}
     </MapContainer>
+    </div>
+    <Footer className='m-0'/>
+    </>
   );
 };
 

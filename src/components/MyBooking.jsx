@@ -2,6 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css'; 
+import Header from './Header';
+import noTaskImage from '../assets/NOTASK.png'; 
+import Footer from './Footer';
+
 
 const localizer = momentLocalizer(moment);
 
@@ -42,8 +46,10 @@ function MyBookings() {
   });
 
   return (
+    <>
+    <Header/>
     <div className="my-bookings container">
-      <h2>My Bookings</h2>
+      <h2 className='text-2xl text-blue-400 m-2 pb-4 -ml-5 font-bold pt-6'>My Bookings</h2>
       {bookings.length > 0 ? (
         <div style={{ height: '600px' }}>
           <Calendar
@@ -55,9 +61,15 @@ function MyBookings() {
           />
         </div>
       ) : (
-        <p>No bookings found.</p>
+        <div className='flex flex-col items-center justify-center'>
+          <img src={noTaskImage} alt='no booking' className='w-1/3' />
+          <p className='text-center font-bold'>No bookings found.</p>
+        </div>
+
       )}
     </div>
+    <Footer/>
+    </>
   );
 }
 
